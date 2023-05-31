@@ -1,14 +1,10 @@
 import {ObjectId} from 'mongodb'
-import {UsersRepository} from '../2-repositories/users-repository'
-import {UserDBType} from '../2-repositories/types'
+import {UsersRepository} from '../3-repositories/users-repository'
+import {UserDBType} from '../3-repositories/types'
 
 
 export class UsersService {
-    usersRepository: UsersRepository
-    constructor() {
-        // явно определяем зависимость в конструкторе
-        this.usersRepository = new UsersRepository()
-    }
+    constructor(protected usersRepository: UsersRepository) {}
     // transaction script pattern
     async getUsers(term: string): Promise<UserDBType[]> {
         return this.usersRepository.getUsers(term)

@@ -1,5 +1,5 @@
 import express from 'express'
-import {runDb} from './2-repositories/db'
+import {runDb} from './3-repositories/db'
 import {usersRouter} from './0-routes/users-router'
 
 // create express app

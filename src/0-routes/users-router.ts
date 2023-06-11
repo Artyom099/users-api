@@ -1,6 +1,9 @@
-import {Router} from 'express'
-import {usersController} from "../composition-root";
+import{Router} from 'express'
+import {ioc} from "../composition-root";
+import {UsersController} from "../1-controllers/users-controller";
 
+
+const usersController = ioc.getInstance<UsersController>(UsersController)
 
 export const usersRouter = Router({})
 

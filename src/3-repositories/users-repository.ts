@@ -2,6 +2,8 @@ import {ObjectId} from 'mongodb'
 import {UserDBType} from './types'
 import {UserModelClass} from './db'
 
+export class AdminUsersRepository {}
+
 export class UsersRepository {
     async getUsers(term: string): Promise<UserDBType[]> {
         return UserModelClass.find({term}).lean()
